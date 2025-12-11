@@ -59,6 +59,17 @@
 
 ### Implementation for User Story 1
 
+<<<<<<< HEAD
+- [x] T014 [P] [US1] Create `Book` entity model (frontend representation) in `frontend/src/types/book.ts`
+- [x] T015 [P] [US1] Create `Module` entity model in `frontend/src/types/module.ts`
+- [x] T016 [P] [US1] Create `Chapter` entity model in `frontend/src/types/chapter.ts`
+- [x] T017 [US1] Implement API call to fetch list of books (`GET /books`) in `frontend/src/services/contentService.ts`
+- [x] T018 [US1] Design and implement Book Card component for home page in `frontend/src/components/BookCard.tsx`
+- [x] T019 [US1] Design and implement Module/Chapter navigation components in `frontend/src/components/` (e.g., `ModuleNav.tsx`, `ChapterList.tsx`)
+- [x] T020 [US1] Implement API call to fetch chapter content (`GET /books/{bookId}/modules/{moduleId}/chapters/{chapterId}`) in `frontend/src/services/contentService.ts`
+- [x] T021 [US1] Design and implement Chapter Viewer component (Full Lesson & Summary tabs) in `frontend/src/components/ChapterViewer.tsx`
+- [x] T022 [US1] Integrate image display within content, ensuring responsive handling in `frontend/src/components/ChapterViewer.tsx`
+=======
 - [ ] T015 [P] [US1] Define React components for `BookCard` in `frontend/src/components/BookCard.tsx`.
 - [ ] T016 [P] [US1] Define React components for `ModuleList` in `frontend/src/components/ModuleList.tsx`.
 - [ ] T017 [P] [US1] Define React components for `ChapterList` in `frontend/src/components/ChapterList.tsx`.
@@ -70,6 +81,7 @@
 - [ ] T023 [US1] Create Docusaurus page for displaying chapter content with tabs (`frontend/src/pages/books/[bookId]/[moduleId]/[chapterId].tsx`).
 - [ ] T024 [US1] Integrate `ContentService` into chapter content page to display "Full Lesson" and "Summary" tabs.
 - [ ] T025 [US1] Ensure images are displayed within chapter content based on `imageUrls` from `Chapter` entity.
+>>>>>>> cf4f1cb469c3e797726c36456329b58a8c39e608
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 

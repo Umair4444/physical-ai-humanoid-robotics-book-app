@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+.env*
+
+# Docusaurus
+.docusaurus/
+.cache/
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Jest/React Testing Library
+coverage/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
