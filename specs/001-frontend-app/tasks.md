@@ -24,15 +24,13 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize a new Docusaurus project in `frontend/` directory.
-- [ ] T002 Configure `tsconfig.json` for TypeScript in `frontend/`.
-- [ ] T003 Install core dependencies: Tailwind CSS, PostCSS, Autoprefixer, Shadcn UI, Zustand in `frontend/`.
-- [ ] T004 Configure Tailwind CSS (`tailwind.config.ts`, `postcss.config.js`) in `frontend/`.
-- [ ] T005 Set up basic Docusaurus configuration in `frontend/docusaurus.config.ts`.
-- [ ] T006 Create initial `frontend/.env.example` with placeholder environment variables (e.g., API URL).
-- [ ] T007 Implement basic folder structure (`src/components`, `src/layouts`, `src/pages`, `src/hooks`, `src/contexts`, `src/services`, `src/styles`, `src/utils`, `tests/`) within `frontend/`.
-- [ ] T008 Configure Jest and React Testing Library for unit/component tests in `frontend/tests/unit/`.
-- [ ] T009 Configure Cypress for E2E tests in `frontend/tests/e2e/`.
+- [x] T001 Initialize new Docusaurus project in `frontend/`
+- [x] T002 [P] Configure Tailwind CSS and Shadcn UI in `frontend/`
+- [x] T003 [P] Setup Zustand for global state management in `frontend/src/store/`
+- [x] T004 [P] Configure TypeScript for the `frontend/` project
+- [x] T005 [P] Setup Jest and React Testing Library for unit/component tests in `frontend/`
+- [x] T006 [P] Setup Cypress for E2E tests in `frontend/`
+- [x] T007 Create initial shared folder structure in `frontend/src/` (components, layouts, pages, hooks, contexts, services, styles, utils)
 
 ---
 
@@ -42,11 +40,12 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T010 Implement theme provider and basic light/dark mode logic using Zustand in `frontend/src/contexts/ThemeContext.tsx`.
-- [ ] T011 Create global style definitions (`frontend/src/styles/global.css`) based on the modern AI Robotics theme (NFR-007).
-- [ ] T012 Set up i18n configuration for English, Urdu, and Chinese translation in `frontend/src/utils/i18n.ts`.
-- [ ] T013 Implement language context/provider using Zustand in `frontend/src/contexts/LanguageContext.tsx`.
-- [ ] T014 Create a base layout component (`frontend/src/layouts/BaseLayout.tsx`) that includes theme and language providers.
+- [x] T008 Implement basic routing for Home, Login, Signup pages using Docusaurus routing in `frontend/src/pages/`
+- [x] T009 Develop global Navbar layout component in `frontend/src/layouts/`
+- [x] T010 Develop global Footer layout component in `frontend/src/layouts/`
+- [x] T011 Setup light/dark mode context/logic using Zustand in `frontend/src/store/` and `frontend/src/contexts/ThemeContext.tsx`
+- [x] T012 Setup multi-language (English, Urdu, Chinese) translation infrastructure using an i18n library in `frontend/src/i18n/`
+- [x] T013 Create an API client for backend communication based on contract definitions in `frontend/src/services/apiClient.ts`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
