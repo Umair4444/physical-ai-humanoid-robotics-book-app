@@ -113,10 +113,10 @@ description: "Task list for Frontend Application feature implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T042 [P] [US3] Develop reusable Chatbot UI components (ChatWindow, ChatInput, MessageBubble) using Shadcn UI in `frontend/src/components/chatbot/`
-- [ ] T043 [US3] Implement API call for chatbot queries (`POST /chatbot/query`) in `frontend/src/services/chatbotService.ts`
-- [ ] T044 [US3] Integrate Chatbot UI into application (e.g., a floating button) in `frontend/src/layouts/Layout.tsx`
-- [ ] T045 [US3] Setup client-side state management for chatbot conversation history using Zustand in `frontend/src/store/chatbotStore.ts`
+- [x] T042 [P] [US3] Develop reusable Chatbot UI components (ChatWindow, ChatInput, MessageBubble) using Shadcn UI in `frontend/src/components/chatbot/`
+- [x] T043 [US3] Implement API call for chatbot queries (`POST /chatbot/query`) in `frontend/src/services/chatbotService.ts`
+- [x] T044 [US3] Integrate Chatbot UI into application (e.g., a floating button) in `frontend/src/layouts/Layout.tsx`
+- [x] T045 [US3] Setup client-side state management for chatbot conversation history using Zustand in `frontend/src/store/chatbotStore.ts`
 
 ## Phase 8: Polish & Cross-Cutting Concerns
 
