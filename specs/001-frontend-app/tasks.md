@@ -50,15 +50,15 @@ description: "Task list for Frontend Application feature implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T014 [P] [US1] Create `Book` entity model (frontend representation) in `frontend/src/types/book.ts`
-- [ ] T015 [P] [US1] Create `Module` entity model in `frontend/src/types/module.ts`
-- [ ] T016 [P] [US1] Create `Chapter` entity model in `frontend/src/types/chapter.ts`
-- [ ] T017 [US1] Implement API call to fetch list of books (`GET /books`) in `frontend/src/services/contentService.ts`
-- [ ] T018 [US1] Design and implement Book Card component for home page in `frontend/src/components/BookCard.tsx`
-- [ ] T019 [US1] Design and implement Module/Chapter navigation components in `frontend/src/components/` (e.g., `ModuleNav.tsx`, `ChapterList.tsx`)
-- [ ] T020 [US1] Implement API call to fetch chapter content (`GET /books/{bookId}/modules/{moduleId}/chapters/{chapterId}`) in `frontend/src/services/contentService.ts`
-- [ ] T021 [US1] Design and implement Chapter Viewer component (Full Lesson & Summary tabs) in `frontend/src/components/ChapterViewer.tsx`
-- [ ] T022 [US1] Integrate image display within content, ensuring responsive handling in `frontend/src/components/ChapterViewer.tsx`
+- [x] T014 [P] [US1] Create `Book` entity model (frontend representation) in `frontend/src/types/book.ts`
+- [x] T015 [P] [US1] Create `Module` entity model in `frontend/src/types/module.ts`
+- [x] T016 [P] [US1] Create `Chapter` entity model in `frontend/src/types/chapter.ts`
+- [x] T017 [US1] Implement API call to fetch list of books (`GET /books`) in `frontend/src/services/contentService.ts`
+- [x] T018 [US1] Design and implement Book Card component for home page in `frontend/src/components/BookCard.tsx`
+- [x] T019 [US1] Design and implement Module/Chapter navigation components in `frontend/src/components/` (e.g., `ModuleNav.tsx`, `ChapterList.tsx`)
+- [x] T020 [US1] Implement API call to fetch chapter content (`GET /books/{bookId}/modules/{moduleId}/chapters/{chapterId}`) in `frontend/src/services/contentService.ts`
+- [x] T021 [US1] Design and implement Chapter Viewer component (Full Lesson & Summary tabs) in `frontend/src/components/ChapterViewer.tsx`
+- [x] T022 [US1] Integrate image display within content, ensuring responsive handling in `frontend/src/components/ChapterViewer.tsx`
 
 ## Phase 4: User Story 5 - Navigate and Explore Site (Priority: P1) 🎯 MVP
 
