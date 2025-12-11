@@ -1,5 +1,7 @@
 import React, { type ReactNode, useEffect, useState } from 'react';
 import useScrollDirection from '../../hooks/useScrollDirection';
+import ThemeToggle from './ThemeToggle';
+import LanguageSwitch from './LanguageSwitch'; // Import LanguageSwitch
 
 interface DynamicNavbarProps {
   children?: ReactNode;
@@ -24,6 +26,8 @@ function DynamicNavbar({ children }: DynamicNavbarProps): JSX.Element {
           {/* Left items */}
         </div>
         <div className="navbar__items navbar__items--right">
+          <ThemeToggle />
+          <LanguageSwitch /> {/* Add LanguageSwitch here */}
           {/* Right items */}
         </div>
       </div>

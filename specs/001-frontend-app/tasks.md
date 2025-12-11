@@ -81,10 +81,10 @@ description: "Task list for Frontend Application feature implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T028 [US2] Integrate light/dark mode toggle into Navbar in `frontend/src/layouts/Navbar.tsx`
-- [ ] T029 [US2] Implement theme switching logic using Zustand and Tailwind CSS in `frontend/src/store/themeStore.ts` and `frontend/tailwind.config.js`
-- [ ] T030 [US2] Integrate translation switch component into Navbar in `frontend/src/layouts/Navbar.tsx`
-- [ ] T031 [US2] Implement language switching logic using Zustand and i18n library in `frontend/src/store/languageStore.ts` and `frontend/src/i18n/`
+- [x] T028 [US2] Integrate light/dark mode toggle into Navbar in `frontend/src/layouts/Navbar.tsx`
+- [x] T029 [US2] Implement theme switching logic using Zustand and Tailwind CSS in `frontend/src/store/themeStore.ts` and `frontend/tailwind.config.js`
+- [x] T030 [US2] Integrate translation switch component into Navbar in `frontend/src/layouts/Navbar.tsx`
+- [x] T031 [US2] Implement language switching logic using Zustand and i18n library in `frontend/src/store/languageStore.ts` and `frontend/src/i18n/`
 
 ## Phase 6: User Story 4 - Manage User Account (Priority: P2)
 

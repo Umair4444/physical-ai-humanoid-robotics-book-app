@@ -1,18 +1,15 @@
-// frontend/src/components/LanguageSwitch.tsx
-
 import React from 'react';
 import clsx from 'clsx';
-// Assuming an i18n setup similar to Docusaurus's or a custom one
-// import { useTranslation } from 'react-i18next'; // Placeholder import
+import { useLanguageStore } from '../store/languageStore'; // Import useLanguageStore
+import i18n from '../i18n/i18n'; // Import i18n instance
 
 interface LanguageSwitchProps {
   // Add any props if needed
 }
 
 const LanguageSwitch: React.FC<LanguageSwitchProps> = () => {
-  // Placeholder for language state and change logic
-  // const { i18n } = useTranslation();
-  const currentLanguage = 'en'; // Replace with actual current language from i18n
+  const { language, setLanguage } = useLanguageStore(); // Use the language store
+
   const availableLanguages = [
     { code: 'en', label: 'English' },
     { code: 'ur', label: 'Urdu' },
@@ -20,16 +17,15 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = () => {
   ];
 
   const changeLanguage = (langCode: string) => {
-    console.log(`Changing language to: ${langCode}`);
-    // Implement actual language change logic here
-    // i18n.changeLanguage(langCode);
+    i18n.changeLanguage(langCode); // Change language using i18n
+    setLanguage(langCode); // Update Zustand store
   };
 
   return (
     <div className="relative inline-block text-left">
       <select
         onChange={(e) => changeLanguage(e.target.value)}
-        value={currentLanguage}
+        value={language} // Use language from store
         className={clsx(
           'block',
           'appearance-none',

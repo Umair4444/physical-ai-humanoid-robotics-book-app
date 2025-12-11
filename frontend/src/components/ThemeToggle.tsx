@@ -1,22 +1,24 @@
 // frontend/src/components/ThemeToggle.tsx
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
-// Assuming a Zustand store for theme management at frontend/src/store/themeStore.ts
-// import useThemeStore from '../store/themeStore'; // Placeholder import
+import { useThemeStore } from '../store/themeStore'; // Import useThemeStore
 
 interface ThemeToggleProps {
   // Add any props if needed, e.g., for external control or styling
 }
 
 const ThemeToggle: React.FC<ThemeToggleProps> = () => {
-  // Placeholder for theme state and toggle logic
-  // const { theme, toggleTheme } = useThemeStore();
-  const theme = 'light'; // Replace with actual theme state from store
-  const toggleTheme = () => {
-    console.log('Toggle theme clicked');
-    // Implement actual theme toggling logic here
-  };
+  const { theme, toggleTheme } = useThemeStore();
+
+  useEffect(() => {
+    // Apply or remove 'dark' class on the document body based on the theme
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   return (
     <button
