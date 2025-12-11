@@ -94,16 +94,16 @@ description: "Task list for Frontend Application feature implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T032 [P] [US4] Implement `User` entity model in `frontend/src/types/user.ts`
-- [ ] T033 [P] [US4] Implement `Subscription Tier` entity model in `frontend/src/types/subscription.ts`
-- [ ] T034 [P] [US4] Develop reusable form components (Input, Button, Label) using Shadcn UI in `frontend/src/components/ui/`
-- [ ] T035 [US4] Design and implement Sign-up page and form in `frontend/src/pages/signup.tsx`
-- [ ] T036 [US4] Implement API call for user registration (`POST /auth/signup`) in `frontend/src/services/authService.ts`
-- [ ] T037 [US4] Design and implement Sign-in page and form in `frontend/src/pages/signin.tsx`
-- [ ] T038 [US4] Implement API call for user authentication (`POST /auth/signin`) in `frontend/src/services/authService.ts`
-- [ ] T039 [US4] Setup client-side state management for user session (login status, user data) using Zustand in `frontend/src/store/userStore.ts`
-- [ ] T040 [US4] Design and implement Pricing section components (Free, Standard, Premium cards) in `frontend/src/components/PricingCards.tsx` and `frontend/src/pages/pricing.tsx`
-- [ ] T041 [US4] Implement API call to fetch subscription plans (`GET /subscriptions/plans`) in `frontend/src/services/subscriptionService.ts`
+- [x] T032 [P] [US4] Implement `User` entity model in `frontend/src/types/user.ts`
+- [x] T033 [P] [US4] Implement `Subscription Tier` entity model in `frontend/src/types/subscription.ts`
+- [x] T034 [P] [US4] Develop reusable form components (Input, Button, Label) using Shadcn UI in `frontend/src/components/ui/`
+- [x] T035 [US4] Design and implement Sign-up page and form in `frontend/src/pages/signup.tsx`
+- [x] T036 [US4] Implement API call for user registration (`POST /auth/signup`) in `frontend/src/services/authService.ts`
+- [x] T037 [US4] Design and implement Sign-in page and form in `frontend/src/pages/login.tsx`
+- [x] T038 [US4] Implement API call for user authentication (`POST /auth/signin`) in `frontend/src/services/authService.ts`
+- [x] T039 [US4] Setup client-side state management for user session (login status, user data) using Zustand in `frontend/src/store/userStore.ts`
+- [x] T040 [US4] Design and implement Pricing section components (Free, Standard, Premium cards) in `frontend/src/components/PricingCards.tsx` and `frontend/src/pages/pricing.tsx`
+- [x] T041 [US4] Implement API call to fetch subscription plans (`GET /subscriptions/plans`) in `frontend/src/services/subscriptionService.ts`
 
 ## Phase 7: User Story 3 - Interact with AI Chatbot (Priority: P2)
 
