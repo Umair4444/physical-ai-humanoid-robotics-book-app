@@ -1,0 +1,61 @@
+# Subscription API Contracts
+
+## Endpoints:
+
+### GET /subscriptions/plans
+*   **Description:** Retrieves a list of available subscription plans.
+*   **Request:** None
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        [
+            {
+                "id": "string (UUID)",
+                "name": "string (e.g., 'Free', 'Standard', 'Premium')",
+                "price": "number",
+                "currency": "string (e.g., 'USD')",
+                "features": [
+                    "string (feature description)"
+                ]
+            }
+        ]
+        ```
+    *   **500 Internal Server Error:**
+
+### GET /subscriptions/current
+*   **Description:** Retrieves the current user's subscription status.
+*   **Request:** Requires authentication token.
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "tier_id": "string (UUID)",
+            "tier_name": "string (e.g., 'Free', 'Standard', 'Premium')",
+            "status": "string (e.g., 'active', 'inactive', 'canceled')",
+            "valid_until": "string (ISO 8601 date-time, null if free)"
+        }
+        ```
+    *   **401 Unauthorized:** Invalid or missing token.
+    *   **500 Internal Server Error:**
+
+### POST /subscriptions/purchase
+*   **Description:** Initiates the purchase of a new subscription plan.
+*   **Request Body (JSON):**
+    ```json
+    {
+        "plan_id": "string (UUID)",
+        "payment_method_token": "string (e.g., Stripe token)"
+    }
+    ```
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "message": "Subscription initiated successfully",
+            "subscription_id": "string (UUID)",
+            "status": "string (e.g., 'pending', 'active')"
+        }
+        ```
+    *   **400 Bad Request:** Invalid plan ID or payment details.
+    *   **401 Unauthorized:** Invalid or missing token.
+    *   **500 Internal Server Error:**

@@ -1,0 +1,75 @@
+# Content API Contracts
+
+## Endpoints:
+
+### GET /books
+*   **Description:** Retrieves a list of all available books with summary information.
+*   **Request:** None
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        [
+            {
+                "id": "string (UUID)",
+                "title": "string",
+                "author": "string",
+                "cover_image_url": "string"
+            }
+        ]
+        ```
+    *   **500 Internal Server Error:**
+
+### GET /books/{bookId}
+*   **Description:** Retrieves detailed information for a specific book.
+*   **Parameters:**
+    *   `bookId`: `string (UUID)` - The ID of the book.
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "id": "string (UUID)",
+            "title": "string",
+            "author": "string",
+            "cover_image_url": "string",
+            "module_ids": ["string (UUID)"]
+        }
+        ```
+    *   **404 Not Found:** Book with `bookId` not found.
+    *   **500 Internal Server Error:**
+
+### GET /books/{bookId}/modules/{moduleId}
+*   **Description:** Retrieves detailed information for a specific module within a book.
+*   **Parameters:**
+    *   `bookId`: `string (UUID)`
+    *   `moduleId`: `string (UUID)` - The ID of the module.
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "id": "string (UUID)",
+            "title": "string",
+            "chapter_ids": ["string (UUID)"]
+        }
+        ```
+    *   **404 Not Found:** Module not found within the specified book.
+    *   **500 Internal Server Error:**
+
+### GET /books/{bookId}/modules/{moduleId}/chapters/{chapterId}
+*   **Description:** Retrieves the full lesson and summary content for a specific chapter.
+*   **Parameters:**
+    *   `bookId`: `string (UUID)`
+    *   `moduleId`: `string (UUID)`
+    *   `chapterId`: `string (UUID)` - The ID of the chapter.
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "id": "string (UUID)",
+            "title": "string",
+            "full_lesson_content": "string (MDX/HTML)",
+            "summary_content": "string (MDX/HTML)",
+            "image_urls": ["string (URL)"]
+        }
+        ```
+    *   **404 Not Found:** Chapter not found within the specified module/book.
+    *   **500 Internal Server Error:**

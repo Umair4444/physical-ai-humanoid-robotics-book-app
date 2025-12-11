@@ -1,0 +1,74 @@
+# Authentication API Contracts
+
+## Endpoints:
+
+### POST /auth/signup
+*   **Description:** Registers a new user.
+*   **Request Body (JSON):**
+    ```json
+    {
+        "email": "string (email format)",
+        "password": "string (min 8 chars, strong)"
+    }
+    ```
+*   **Response (JSON):**
+    *   **201 Created:**
+        ```json
+        {
+            "message": "User registered successfully",
+            "user_id": "string (UUID)"
+        }
+        ```
+    *   **400 Bad Request:** User already exists or invalid input.
+    *   **500 Internal Server Error:**
+
+### POST /auth/signin
+*   **Description:** Authenticates a user and issues a session token.
+*   **Request Body (JSON):**
+    ```json
+    {
+        "email": "string (email format)",
+        "password": "string"
+    }
+    ```
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "message": "Login successful",
+            "access_token": "string (JWT)",
+            "token_type": "bearer",
+            "expires_in": "integer (seconds)"
+        }
+        ```
+    *   **401 Unauthorized:** Invalid credentials.
+    *   **500 Internal Server Error:**
+
+### POST /auth/signout
+*   **Description:** Invalidates the current user session.
+*   **Request Body:** None
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "message": "Logout successful"
+        }
+        ```
+    *   **401 Unauthorized:** No active session.
+    *   **500 Internal Server Error:**
+
+### GET /auth/me
+*   **Description:** Retrieves the profile of the currently authenticated user.
+*   **Request:** Requires authentication token in Header `Authorization: Bearer <token>`.
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "user_id": "string (UUID)",
+            "email": "string (email format)",
+            "subscription_tier_id": "string (UUID)",
+            "tier_name": "string (Free, Standard, Premium)"
+        }
+        ```
+    *   **401 Unauthorized:** Invalid or missing token.
+    *   **500 Internal Server Error:**

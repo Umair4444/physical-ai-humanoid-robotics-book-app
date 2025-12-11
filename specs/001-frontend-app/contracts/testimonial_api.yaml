@@ -1,0 +1,46 @@
+# Testimonial API Contracts
+
+## Endpoints:
+
+### GET /testimonials
+*   **Description:** Retrieves a list of testimonials. Can be filtered by book.
+*   **Query Parameters:**
+    *   `book_id`: `string (UUID, optional)` - Filter testimonials for a specific book.
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        [
+            {
+                "id": "string (UUID)",
+                "user_name": "string",
+                "book_id": "string (UUID)",
+                "rating": "integer (1-5)",
+                "comment": "string",
+                "date": "string (ISO 8601 date-time)"
+            }
+        ]
+        ```
+    *   **500 Internal Server Error:**
+
+### POST /testimonials
+*   **Description:** Submits a new testimonial for a book.
+*   **Request:** Requires authentication token.
+*   **Request Body (JSON):**
+    ```json
+    {
+        "book_id": "string (UUID)",
+        "rating": "integer (1-5)",
+        "comment": "string"
+    }
+    ```
+*   **Response (JSON):**
+    *   **201 Created:**
+        ```json
+        {
+            "message": "Testimonial submitted successfully",
+            "testimonial_id": "string (UUID)"
+        }
+        ```
+    *   **400 Bad Request:** Invalid input.
+    *   **401 Unauthorized:** Invalid or missing token.
+    *   **500 Internal Server Error:**

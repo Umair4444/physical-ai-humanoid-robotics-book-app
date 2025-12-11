@@ -1,0 +1,28 @@
+# Chatbot API Contracts
+
+## Endpoints:
+
+### POST /chatbot/query
+*   **Description:** Sends a query to the RAG-chatbot and receives a response.
+*   **Request Body (JSON):**
+    ```json
+    {
+        "query": "string (user's question)",
+        "context": "string (optional, current chapter/page context)"
+    }
+    ```
+*   **Response (JSON):**
+    *   **200 OK:**
+        ```json
+        {
+            "response": "string (chatbot's answer)",
+            "source_documents": [
+                {
+                    "title": "string (e.g., chapter title)",
+                    "url": "string (e.g., link to relevant section)"
+                }
+            ]
+        }
+        ```
+    *   **400 Bad Request:** Invalid query.
+    *   **500 Internal Server Error:**
