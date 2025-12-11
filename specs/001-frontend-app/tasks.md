@@ -53,16 +53,12 @@
 
 ## Phase 3: User Story 1 - Read Textbook Content (Priority: P1) 🎯 MVP
 
-**Goal**: As a user, I want to navigate and read the textbook content, organized into modules and chapters, with each chapter having a full lesson and a summary tab, accompanied by relevant images.
+**Goal**: Enable users to navigate and read textbook content, with tabbed lessons and images.
 
 **Independent Test**: A user can access the home page, select a book, navigate through its modules and chapters, view both "Full Lesson" and "Summary" tabs, and see relevant images displayed.
 
 ### Implementation for User Story 1
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4903da8208423af95e2b56e3f4aa55b3d3dcc893
 - [x] T014 [P] [US1] Create `Book` entity model (frontend representation) in `frontend/src/types/book.ts`
 - [x] T015 [P] [US1] Create `Module` entity model in `frontend/src/types/module.ts`
 - [x] T016 [P] [US1] Create `Chapter` entity model in `frontend/src/types/chapter.ts`
@@ -72,25 +68,6 @@
 - [x] T020 [US1] Implement API call to fetch chapter content (`GET /books/{bookId}/modules/{moduleId}/chapters/{chapterId}`) in `frontend/src/services/contentService.ts`
 - [x] T021 [US1] Design and implement Chapter Viewer component (Full Lesson & Summary tabs) in `frontend/src/components/ChapterViewer.tsx`
 - [x] T022 [US1] Integrate image display within content, ensuring responsive handling in `frontend/src/components/ChapterViewer.tsx`
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4903da8208423af95e2b56e3f4aa55b3d3dcc893
-- [ ] T015 [P] [US1] Define React components for `BookCard` in `frontend/src/components/BookCard.tsx`.
-- [ ] T016 [P] [US1] Define React components for `ModuleList` in `frontend/src/components/ModuleList.tsx`.
-- [ ] T017 [P] [US1] Define React components for `ChapterList` in `frontend/src/components/ChapterList.tsx`.
-- [ ] T018 [P] [US1] Define React components for `LessonTabs` (Full Lesson, Summary) in `frontend/src/components/LessonTabs.tsx`.
-- [ ] T019 [P] [US1] Implement `ContentService` for fetching book, module, chapter content from API in `frontend/src/services/ContentService.ts`.
-- [ ] T020 [US1] Create Docusaurus page for displaying a list of books (`frontend/src/pages/books.tsx`).
-- [ ] T021 [US1] Create Docusaurus page for displaying modules of a selected book (`frontend/src/pages/books/[bookId]/index.tsx`).
-- [ ] T022 [US1] Create Docusaurus page for displaying chapters of a selected module (`frontend/src/pages/books/[bookId]/[moduleId]/index.tsx`).
-- [ ] T023 [US1] Create Docusaurus page for displaying chapter content with tabs (`frontend/src/pages/books/[bookId]/[moduleId]/[chapterId].tsx`).
-- [ ] T024 [US1] Integrate `ContentService` into chapter content page to display "Full Lesson" and "Summary" tabs.
-- [ ] T025 [US1] Ensure images are displayed within chapter content based on `imageUrls` from `Chapter` entity.
-<<<<<<< HEAD
-=======
->>>>>>> cf4f1cb469c3e797726c36456329b58a8c39e608
->>>>>>> 4903da8208423af95e2b56e3f4aa55b3d3dcc893
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -104,12 +81,12 @@
 
 ### Implementation for User Story 2
 
-- [ ] T026 [P] [US2] Create `ThemeToggle` component in `frontend/src/components/ThemeToggle.tsx`.
-- [ ] T027 [P] [US2] Create `LanguageSwitch` component in `frontend/src/components/LanguageSwitch.tsx`.
-- [ ] T028 [US2] Integrate `ThemeToggle` component into the global layout (`frontend/src/layouts/BaseLayout.tsx`).
-- [ ] T029 [US2] Integrate `LanguageSwitch` component into the global layout (`frontend/src/layouts/BaseLayout.tsx`).
-- [ ] T030 [US2] Implement persistence for theme and language settings using local storage in `frontend/src/utils/localStorage.ts`.
-- [ ] T031 [US2] Ensure all static and dynamic content can be translated via i18n setup.
+- [x] T026 [P] [US2] Create `ThemeToggle` component in `frontend/src/components/ThemeToggle.tsx`.
+- [x] T027 [P] [US2] Create `LanguageSwitch` component in `frontend/src/components/LanguageSwitch.tsx`.
+- [x] T028 [US2] Integrate `ThemeToggle` component into the global layout (`frontend/src/layouts/BaseLayout.tsx`).
+- [x] T029 [US2] Integrate `LanguageSwitch` component into the global layout (`frontend/src/layouts/BaseLayout.tsx`).
+- [x] T030 [US2] Implement persistence for theme and language settings using local storage in `frontend/src/utils/localStorage.ts`.
+- [x] T031 [US2] Ensure all static and dynamic content can be translated via i18n setup.
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
