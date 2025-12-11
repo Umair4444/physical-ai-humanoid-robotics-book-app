@@ -85,6 +85,19 @@ As a user, I want to easily navigate the application using a dynamic navbar, jum
 2.  **Given** I am at the bottom of a long page, **When** I click the arrow icon at the bottom right, **Then** I am taken smoothly to the top of the page.
 3.  **Given** I am on the home page, **Then** I see a clear description of the site and a section showcasing 4 available books.
 
+### User Story 6 - Provide Feedback (Priority: P2)
+
+As a user, I want to leave ratings and comments (testimonials) for books to share my experience with others.
+
+**Why this priority**: Enhances community engagement and provides valuable social proof for the educational content.
+
+**Independent Test**: A user can successfully submit a rating and comment for a book, and their testimonial is displayed on the site.
+
+**Acceptance Scenarios**:
+
+1.  **Given** I am viewing a book, **When** I navigate to the testimonial section, **Then** I see an option to submit my rating and comment.
+2.  **Given** I have submitted a rating and comment, **When** the testimonial is processed, **Then** my testimonial is visible to other users.
+
 ---
 
 ### Edge Cases
@@ -105,7 +118,7 @@ As a user, I want to easily navigate the application using a dynamic navbar, jum
 - **FR-004**: The application MUST display relevant images within the textbook content.
 - **FR-005**: The application MUST provide a toggle switch for light and dark mode.
 - **FR-006**: The application MUST provide a translation switch for English, Urdu, and Chinese.
-- **FR-007**: The application MUST use a modern AI Robotics theme with a capsule-like navbar.
+- **FR-007**: The application MUST use a modern AI Robotics theme with a capsule-like navbar, guided by a mood board or specific design system documentation.
 - **FR-008**: The navbar MUST show on scrolling up and hide when scrolling down.
 - **FR-009**: The navbar MUST have a glass-card effect when visible and fixed at the top, and no glass effect when at the very top of the page (or static).
 - **FR-010**: The application MUST include a themed footer.
@@ -115,6 +128,15 @@ As a user, I want to easily navigate the application using a dynamic navbar, jum
 - **FR-014**: The home page MUST describe the site and feature a section detailing available books (displaying 4 books).
 - **FR-015**: The application MUST include a pricing section with three subscription tiers: Free, Standard, and Premium.
 - **FR-016**: The application MUST include a testimonial section showcasing book ratings and comments.
+
+### Non-Functional Requirements
+
+- **NFR-001**: **Performance**: Initial page load time MUST be less than 3 seconds. Subsequent page navigation MUST be less than 1 second. (Refer to SC-007, SC-008 for related metrics).
+- **NFR-002**: **Accessibility**: The application SHOULD adhere to WCAG 2.1 Level AA guidelines. (Refer to tasks T050 for implementation).
+- **NFR-003**: **Security**: User authentication MUST use industry-standard secure practices (e.g., hashed passwords, JWT/session tokens). All API communication SHOULD use HTTPS. (Refer to User Story 4, Constitution Principle V).
+- **NFR-004**: **Responsiveness**: The application MUST be fully responsive and provide an optimal viewing experience across common desktop, tablet, and mobile devices. (Refer to tasks T049 for implementation).
+- **NFR-005**: **Usability**: The user interface SHOULD be intuitive and easy to navigate for target users. (Partially covered by User Stories and SC-001, SC-005).
+- **NFR-006**: **Maintainability**: The codebase SHOULD follow established coding standards (e.g., TypeScript/React best practices, modular components). (Refer to Constitution Principle II).
 
 ### Key Entities *(include if feature involves data)*
 
