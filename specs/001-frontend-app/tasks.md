@@ -1,26 +1,20 @@
-# Tasks: Frontend Application
 
-**Input**: Design documents from `/specs/001-frontend-app/`
-**Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
-
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
-
-**Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
-
-## Format: `[ID] [P?] [Story] Description`
-
-- **[P]**: Can run in parallel (different files, no dependencies)
-- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
-- Include exact file paths in descriptions
-
-## Path Conventions
-
-- **Web app**: `frontend/src/`
-- Paths shown below assume single project - adjust based on plan.md structure
-
+description: "Task list for Frontend Application feature implementation"
 ---
 
-## Phase 1: Setup (Project Initialization and Core Configuration)
+# Tasks: Frontend Application
+
+**Input**:
+- Design documents from `specs/001-frontend-app/`
+- `plan.md` (required), `spec.md` (required for user stories), `research.md`, `data-model.md`, `contracts/`, `quickstart.md`
+
+**Prerequisites**: `plan.md` (required), `spec.md` (required for user stories), `research.md`, `data-model.md`, `contracts/`
+
+**Tests**: This task list assumes a TDD approach with explicit test tasks where appropriate.
+
+## Format: `- [ ] [TaskID] [P?] [Story?] Description with file path`
+
+## Phase 1: Setup (Shared Infrastructure)
 
 **Purpose**: Project initialization and basic structure
 
@@ -32,9 +26,7 @@
 - [x] T006 [P] Setup Cypress for E2E tests in `frontend/`
 - [x] T007 Create initial shared folder structure in `frontend/src/` (components, layouts, pages, hooks, contexts, services, styles, utils)
 
----
-
-## Phase 2: Foundational (Core Global Features)
+## Phase 2: Foundational (Blocking Prerequisites)
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
@@ -48,8 +40,6 @@
 - [x] T013 Create an API client for backend communication based on contract definitions in `frontend/src/services/apiClient.ts`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
-
----
 
 ## Phase 3: User Story 1 - Read Textbook Content (Priority: P1) 🎯 MVP
 
@@ -69,123 +59,77 @@
 - [x] T021 [US1] Design and implement Chapter Viewer component (Full Lesson & Summary tabs) in `frontend/src/components/ChapterViewer.tsx`
 - [x] T022 [US1] Integrate image display within content, ensuring responsive handling in `frontend/src/components/ChapterViewer.tsx`
 
-**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
+## Phase 4: User Story 5 - Navigate and Explore Site (Priority: P1) 🎯 MVP
 
----
-
-## Phase 4: User Story 2 - Customize Viewing Experience (Priority: P1)
-
-**Goal**: As a user, I want to switch between light and dark mode and translate the content into English, Urdu, or Chinese to suit my preferences.
-
-**Independent Test**: A user can toggle between light/dark mode and switch the content language.
-
-### Implementation for User Story 2
-
-- [x] T026 [P] [US2] Create `ThemeToggle` component in `frontend/src/components/ThemeToggle.tsx`.
-- [x] T027 [P] [US2] Create `LanguageSwitch` component in `frontend/src/components/LanguageSwitch.tsx`.
-- [x] T028 [US2] Integrate `ThemeToggle` component into the global layout (`frontend/src/layouts/BaseLayout.tsx`).
-- [x] T029 [US2] Integrate `LanguageSwitch` component into the global layout (`frontend/src/layouts/BaseLayout.tsx`).
-- [x] T030 [US2] Implement persistence for theme and language settings using local storage in `frontend/src/utils/localStorage.ts`.
-- [x] T031 [US2] Ensure all static and dynamic content can be translated via i18n setup.
-
-**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
-
----
-
-## Phase 5: User Story 5 - Navigate and Explore Site (Priority: P1)
-
-**Goal**: As a user, I want to easily navigate the application using a dynamic navbar, jump to the top of the page, and understand the site's offerings from the home page.
+**Goal**: Provide intuitive site navigation and exploration.
 
 **Independent Test**: A user can use the dynamic navbar, scroll to the top using the arrow, and get an overview of the site from the home page.
 
 ### Implementation for User Story 5
 
-- [ ] T032 [P] [US5] Design and implement a `DynamicNavbar` component with capsule-like styling in `frontend/src/components/DynamicNavbar.tsx`.
-- [ ] T033 [US5] Implement scroll-up/scroll-down logic for `DynamicNavbar` visibility in `frontend/src/hooks/useScrollDirection.ts`.
-- [ ] T034 [US5] Apply glass-card effect to `DynamicNavbar` when visible and fixed at top, no effect when at very top (`frontend/src/styles/navbar.css`).
-- [ ] T035 [P] [US5] Implement a `ScrollToTopArrow` component in `frontend/src/components/ScrollToTopArrow.tsx`.
-- [ ] T036 [US5] Integrate `DynamicNavbar` and `ScrollToTopArrow` into the `BaseLayout` (`frontend/src/layouts/BaseLayout.tsx`).
-- [ ] T037 [US5] Develop the Home Page content (`frontend/src/pages/index.tsx`) including site description and featured books section.
-- [ ] T038 [P] [US5] Create `FeaturedBooks` component to display 4 available books on the Home Page in `frontend/src/components/FeaturedBooks.tsx`.
-- [ ] T039 [US5] Design and implement a themed `Footer` component in `frontend/src/layouts/Footer.tsx`.
-- [ ] T040 [US5] Integrate `Footer` component into the `BaseLayout` (`frontend/src/layouts/BaseLayout.tsx`).
+- [ ] T023 [US5] Develop dynamic Navbar component logic (show on scroll up, hide on scroll down) in `frontend/src/layouts/Navbar.tsx`
+- [ ] T024 [US5] Implement glass-card effect for Navbar using Tailwind CSS in `frontend/src/layouts/Navbar.tsx`
+- [ ] T025 [P] [US5] Develop Scroll-to-Top arrow component in `frontend/src/components/ScrollToTop.tsx`
+- [ ] T026 [US5] Integrate Scroll-to-Top arrow functionality across relevant pages in `frontend/src/layouts/Layout.tsx`
+- [ ] T027 [US5] Design and implement Home page content, including site description and featured books section, in `frontend/src/pages/index.tsx`
 
-**Checkpoint**: All user stories should now be independently functional
+## Phase 5: User Story 2 - Customize Viewing Experience (Priority: P1) 🎯 MVP
 
----
+**Goal**: Allow users to personalize their viewing experience with themes and language.
 
-## Phase 6: User Story 3 - Interact with AI Chatbot (Priority: P2)
+**Independent Test**: A user can toggle between light/dark mode and switch the content language.
 
-**Goal**: As a user, I want to interact with a RAG-chatbot to ask questions and get assistance related to the textbook content.
+### Implementation for User Story 2
 
-**Independent Test**: A user can open the chatbot, ask a question relevant to the textbook, and receive an appropriate response.
+- [ ] T028 [US2] Integrate light/dark mode toggle into Navbar in `frontend/src/layouts/Navbar.tsx`
+- [ ] T029 [US2] Implement theme switching logic using Zustand and Tailwind CSS in `frontend/src/store/themeStore.ts` and `frontend/tailwind.config.js`
+- [ ] T030 [US2] Integrate translation switch component into Navbar in `frontend/src/layouts/Navbar.tsx`
+- [ ] T031 [US2] Implement language switching logic using Zustand and i18n library in `frontend/src/store/languageStore.ts` and `frontend/src/i18n/`
 
-### Implementation for User Story 3
+## Phase 6: User Story 4 - Manage User Account (Priority: P2)
 
-- [ ] T041 [P] [US3] Implement `ChatbotService` for API interaction (`POST /chatbot/query`) in `frontend/src/services/ChatbotService.ts`.
-- [ ] T042 [P] [US3] Create `ChatbotInterface` component (text input, response display) in `frontend/src/components/ChatbotInterface.tsx`.
-- [ ] T043 [US3] Integrate `ChatbotInterface` into a global accessible element (e.g., a floating button/modal) in `frontend/src/layouts/BaseLayout.tsx` or a dedicated Docusaurus plugin.
-- [ ] T044 [US3] Implement state management for chatbot conversation flow (e.g., loading, messages, errors) using Zustand in `frontend/src/stores/chatbotStore.ts`.
-- [ ] T045 [US3] Handle displaying contextually relevant answers and error states from `ChatbotService` in `ChatbotInterface`.
-
-**Checkpoint**: All user stories should now be independently functional
-
----
-
-## Phase 7: User Story 4 - Manage User Account (Priority: P2)
-
-**Goal**: As a user, I want to create an account, log in, and manage my subscription to access premium features.
+**Goal**: Enable user authentication and subscription management.
 
 **Independent Test**: A user can successfully sign up, sign in, and view subscription options.
 
 ### Implementation for User Story 4
 
-- [ ] T046 [P] [US4] Implement `AuthService` for user registration (`POST /auth/signup`), login (`POST /auth/signin`), and user info retrieval (`GET /auth/me`) in `frontend/src/services/AuthService.ts`.
-- [ ] T047 [P] [US4] Implement `SubscriptionService` for fetching plans (`GET /subscriptions/plans`) and current status (`GET /subscriptions/current`) in `frontend/src/services/SubscriptionService.ts`.
-- [ ] T048 [P] [US4] Create `AuthStore` using Zustand to manage user authentication state and subscription status in `frontend/src/stores/authStore.ts`.
-- [ ] T049 [US4] Develop Docusaurus login page (`frontend/src/pages/login.tsx`) using `AuthService`.
-- [ ] T050 [US4] Develop Docusaurus signup page (`frontend/src/pages/signup.tsx`) using `AuthService`.
-- [ ] T051 [P] [US4] Create `PricingSection` component (`frontend/src/components/PricingSection.tsx`) to display free, standard, and premium tiers using `SubscriptionService`.
-- [ ] T052 [US4] Integrate `PricingSection` into a dedicated Docusaurus page (`frontend/src/pages/pricing.tsx`).
-- [ ] T053 [US4] Implement basic routing protection for authenticated routes (e.g., dashboard, premium content) in Docusaurus configuration.
+- [ ] T032 [P] [US4] Implement `User` entity model in `frontend/src/types/user.ts`
+- [ ] T033 [P] [US4] Implement `Subscription Tier` entity model in `frontend/src/types/subscription.ts`
+- [ ] T034 [P] [US4] Develop reusable form components (Input, Button, Label) using Shadcn UI in `frontend/src/components/ui/`
+- [ ] T035 [US4] Design and implement Sign-up page and form in `frontend/src/pages/signup.tsx`
+- [ ] T036 [US4] Implement API call for user registration (`POST /auth/signup`) in `frontend/src/services/authService.ts`
+- [ ] T037 [US4] Design and implement Sign-in page and form in `frontend/src/pages/signin.tsx`
+- [ ] T038 [US4] Implement API call for user authentication (`POST /auth/signin`) in `frontend/src/services/authService.ts`
+- [ ] T039 [US4] Setup client-side state management for user session (login status, user data) using Zustand in `frontend/src/store/userStore.ts`
+- [ ] T040 [US4] Design and implement Pricing section components (Free, Standard, Premium cards) in `frontend/src/components/PricingCards.tsx` and `frontend/src/pages/pricing.tsx`
+- [ ] T041 [US4] Implement API call to fetch subscription plans (`GET /subscriptions/plans`) in `frontend/src/services/subscriptionService.ts`
 
-**Checkpoint**: All user stories should now be independently functional
+## Phase 7: User Story 3 - Interact with AI Chatbot (Priority: P2)
 
----
+**Goal**: Integrate an interactive RAG-chatbot for content-related queries.
 
-## Phase 8: User Story 6 - Provide Feedback (Priority: P2)
+**Independent Test**: A user can open the chatbot, ask a question relevant to the textbook, and receive an appropriate response.
 
-**Goal**: As a user, I want to leave ratings and comments (testimonials) for books to share my experience with others.
+### Implementation for User Story 3
 
-**Independent Test**: A user can successfully submit a rating and comment for a book, and their testimonial is displayed on the site.
+- [ ] T042 [P] [US3] Develop reusable Chatbot UI components (ChatWindow, ChatInput, MessageBubble) using Shadcn UI in `frontend/src/components/chatbot/`
+- [ ] T043 [US3] Implement API call for chatbot queries (`POST /chatbot/query`) in `frontend/src/services/chatbotService.ts`
+- [ ] T044 [US3] Integrate Chatbot UI into application (e.g., a floating button) in `frontend/src/layouts/Layout.tsx`
+- [ ] T045 [US3] Setup client-side state management for chatbot conversation history using Zustand in `frontend/src/store/chatbotStore.ts`
 
-### Implementation for User Story 6
-
-- [ ] T054 [P] [US6] Implement `TestimonialService` for fetching (`GET /testimonials`) and submitting (`POST /testimonials`) testimonials in `frontend/src/services/TestimonialService.ts`.
-- [ ] T055 [P] [US6] Create `TestimonialForm` component for submitting ratings and comments in `frontend/src/components/TestimonialForm.tsx`.
-- [ ] T056 [P] [US6] Create `TestimonialDisplay` component for showcasing existing testimonials in `frontend/src/components/TestimonialDisplay.tsx`.
-- [ ] T057 [US6] Integrate `TestimonialForm` and `TestimonialDisplay` into a book-specific page or section (`frontend/src/pages/books/[bookId]/testimonials.tsx` or similar).
-
-**Checkpoint**: All user stories should now be independently functional
-
----
-
-## Phase 9: Final - Polish & Cross-Cutting Concerns
+## Phase 8: Polish & Cross-Cutting Concerns
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T058 [P] Implement responsive design adjustments across all components and pages (NFR-004).
-- [ ] T059 [P] Conduct accessibility audit and implement WCAG 2.1 Level AA compliance where feasible (NFR-002).
-- [ ] T060 Optimize image assets and implement lazy loading for images within content (NFR-001, Constitution Principle VI).
-- [ ] T061 Implement SEO best practices for Docusaurus pages (e.g., sitemaps, metadata).
-- [ ] T062 Review and refine error handling across all API integrations (`frontend/src/services/`).
-- [ ] T063 Implement client-side form validation for user input fields (signup, login, testimonial forms).
-- [ ] T064 Conduct performance testing and optimize critical rendering paths (NFR-001).
-- [ ] T065 Create comprehensive documentation for frontend setup, architecture, and deployment (`frontend/README.md`, Docusaurus docs).
-- [ ] T066 Implement E2E tests for all critical user flows using Cypress (`frontend/tests/e2e/`).
-- [ ] T067 Final cross-browser compatibility testing.
-
----
+- [ ] T046 [P] Implement Testimonial section components in `frontend/src/components/Testimonials.tsx` and integrate into home page (`frontend/src/pages/index.tsx`)
+- [ ] T047 [P] Implement API calls for Testimonials (`GET /testimonials`, `POST /testimonials`) in `frontend/src/services/testimonialService.ts`
+- [ ] T048 [P] Develop Contact page with form using reusable form components in `frontend/src/pages/contact.tsx`
+- [ ] T049 Refine responsive design for all pages and components using Tailwind CSS in `frontend/`
+- [ ] T050 Conduct accessibility review and implement improvements across the application in `frontend/`
+- [ ] T051 Implement performance optimization (e.g., lazy loading components/images, code splitting) in `frontend/`
+- [ ] T052 Add comprehensive E2E tests with Cypress for critical user journeys (reading content, login/signup, chatbot interaction) in `frontend/cypress/e2e/`
+- [ ] T053 Review and update `quickstart.md` and any other relevant documentation in `specs/001-frontend-app/`
 
 ## Dependencies & Execution Order
 
@@ -193,98 +137,61 @@
 
 - **Setup (Phase 1)**: No dependencies - can start immediately
 - **Foundational (Phase 2)**: Depends on Setup completion - BLOCKS all user stories
-- **User Stories (Phase 3+)**: All depend on Foundational phase completion
-  - User stories can then proceed in parallel (if staffed)
-  - Or sequentially in priority order (P1 → P2 → P3)
-- **Polish (Final Phase)**: Depends on all desired user stories being complete
+- **User Stories (Phase 3-7)**: All depend on Foundational phase completion
+  - User Story 1 (P1), User Story 5 (P1), User Story 2 (P1) can proceed in parallel or prioritized order.
+  - User Story 4 (P2), User Story 3 (P2) can proceed once P1 stories are stable, or in parallel if resources allow.
+- **Polish (Phase 8)**: Depends on all desired user stories being complete
 
 ### User Story Dependencies
 
-- **User Story 1 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
-- **User Story 2 (P1)**: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable
-- **User Story 5 (P1)**: Can start after Foundational (Phase 2) - May integrate with US1/US2 but should be independently testable
-- **User Story 3 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1/US2/US5 but should be independently testable
-- **User Story 4 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1/US2/US3/US5 but should be independently testable
-- **User Story 6 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1/US2/US3/US4/US5 but should be independently testable
+- All user stories are designed to be largely independent after the Foundational phase.
+- US1 (Read Textbook Content) might provide data for US3 (Chatbot), but US3 can use placeholder data initially.
+- US4 (Manage User Account) impacts access to content, but content viewing (US1) is available to free users.
 
 ### Within Each User Story
 
-- Tests (if included) MUST be written and FAIL before implementation
-- Models before services
-- Services before endpoints
-- Core implementation before integration
-- Story complete before moving to next priority
+- API calls and data fetching logic should be implemented before UI components that consume them.
+- Reusable UI components should be developed before integrating them into pages.
+- Tests (if included) MUST be written and FAIL before implementation.
 
 ### Parallel Opportunities
 
-- All Setup tasks marked [P] can run in parallel
-- All Foundational tasks marked [P] can run in parallel (within Phase 2)
-- Once Foundational phase completes, all user stories can start in parallel (if team capacity allows)
-- All tests for a user story marked [P] can run in parallel
-- Models within a story marked [P] can run in parallel
-- Different user stories can be worked on in parallel by different team members
-
----
-
-## Parallel Example: User Story 1
-
-```bash
-# Launch all tests for User Story 1 together (if tests requested):
-# (No tests requested in spec.md, so none generated here)
-
-# Launch all models for User Story 1 together:
-# T015 [P] [US1] Define React components for `BookCard` in `frontend/src/components/BookCard.tsx`.
-# T016 [P] [US1] Define React components for `ModuleList` in `frontend/src/components/ModuleList.tsx`.
-# T017 [P] [US1] Define React components for `ChapterList` in `frontend/src/components/ChapterList.tsx`.
-# T018 [P] [US1] Define React components for `LessonTabs` (Full Lesson, Summary) in `frontend/src/components/LessonTabs.tsx`.
-# T019 [P] [US1] Implement `ContentService` for fetching book, module, chapter content from API in `frontend/src/services/ContentService.ts`.
-```
-
----
+- All Setup tasks marked [P] can run in parallel.
+- Many Foundational tasks can be parallelized (e.g., Navbar/Footer, theme setup, i18n setup).
+- Once Foundational phase completes, User Stories can be worked on in parallel by different team members, respecting P1 priorities first.
+- Within each User Story, tasks marked [P] can be done in parallel (e.g., entity models, reusable UI components).
 
 ## Implementation Strategy
 
-### MVP First (User Story 1 Only)
+### MVP First (User Stories 1, 5, 2)
 
-1. Complete Phase 1: Setup
-2. Complete Phase 2: Foundational (CRITICAL - blocks all stories)
-3. Complete Phase 3: User Story 1
-4. **STOP and VALIDATE**: Test User Story 1 independently
-5. Deploy/demo if ready
+1.  Complete Phase 1: Setup
+2.  Complete Phase 2: Foundational (CRITICAL - blocks all user stories)
+3.  Complete Phase 3: User Story 1 (Read Textbook Content)
+4.  Complete Phase 4: User Story 5 (Navigate and Explore Site)
+5.  Complete Phase 5: User Story 2 (Customize Viewing Experience)
+6.  **STOP and VALIDATE**: Test primary user journeys and core functionality.
+7.  Deploy/demo if ready.
 
 ### Incremental Delivery
 
-1. Complete Setup + Foundational → Foundation ready
-2. Add User Story 1 → Test independently → Deploy/Demo (MVP!)
-3. Add User Story 2 → Test independently → Deploy/Demo
-4. Add User Story 5 → Test independently → Deploy/Demo
-5. Add User Story 3 → Test independently → Deploy/Demo
-6. Add User Story 4 → Test independently → Deploy/Demo
-7. Add User Story 6 → Test independently → Deploy/Demo
-8. Each story adds value without breaking previous stories
+1.  Complete Setup + Foundational → Foundation ready
+2.  Add User Story 1 → Test independently → Deploy/Demo (Core Content)
+3.  Add User Story 5 → Test independently → Deploy/Demo (Navigation)
+4.  Add User Story 2 → Test independently → Deploy/Demo (Customization)
+5.  Add User Story 4 → Test independently → Deploy/Demo (User Accounts)
+6.  Add User Story 3 → Test independently → Deploy/Demo (Chatbot)
+7.  Each story adds value without breaking previous stories.
 
 ### Parallel Team Strategy
 
 With multiple developers:
 
-1. Team completes Setup + Foundational together
-2. Once Foundational is done:
-   - Developer A: User Story 1 (P1)
-   - Developer B: User Story 2 (P1)
-   - Developer C: User Story 5 (P1)
-   - Developer D: User Story 3 (P2)
-   - Developer E: User Story 4 (P2)
-   - Developer F: User Story 6 (P2)
-3. Stories complete and integrate independently
-
----
-
-## Notes
-
-- [P] tasks = different files, no dependencies
-- [Story] label maps task to specific user story for traceability
-- Each user story should be independently completable and testable
-- Verify tests fail before implementing
-- Commit after each task or logical group
-- Stop at any checkpoint to validate story independently
-- Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
+1.  Team completes Setup + Foundational together.
+2.  Once Foundational is done:
+    *   Developer A: User Story 1 (Content)
+    *   Developer B: User Story 5 (Navigation)
+    *   Developer C: User Story 2 (Customization)
+    *   Developer D: User Story 4 (User Accounts)
+    *   Developer E: User Story 3 (Chatbot)
+3.  Stories complete and integrate independently.
