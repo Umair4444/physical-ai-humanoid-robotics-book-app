@@ -122,14 +122,14 @@ description: "Task list for Frontend Application feature implementation"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T046 [P] Implement Testimonial section components in `frontend/src/components/Testimonials.tsx` and integrate into home page (`frontend/src/pages/index.tsx`)
-- [ ] T047 [P] Implement API calls for Testimonials (`GET /testimonials`, `POST /testimonials`) in `frontend/src/services/testimonialService.ts`
-- [ ] T048 [P] Develop Contact page with form using reusable form components in `frontend/src/pages/contact.tsx`
-- [ ] T049 Refine responsive design for all pages and components using Tailwind CSS in `frontend/`
-- [ ] T050 Conduct accessibility review and implement improvements across the application in `frontend/`
-- [ ] T051 Implement performance optimization (e.g., lazy loading components/images, code splitting) in `frontend/`
-- [ ] T052 Add comprehensive E2E tests with Cypress for critical user journeys (reading content, login/signup, chatbot interaction) in `frontend/cypress/e2e/`
-- [ ] T053 Review and update `quickstart.md` and any other relevant documentation in `specs/001-frontend-app/`
+- [x] T046 [P] Implement Testimonial section components in `frontend/src/components/Testimonials.tsx` and integrate into home page (`frontend/src/pages/index.tsx`)
+- [x] T047 [P] Implement API calls for Testimonials (`GET /testimonials`, `POST /testimonials`) in `frontend/src/services/testimonialService.ts`
+- [x] T048 [P] Develop Contact page with form using reusable form components in `frontend/src/pages/contact.tsx`
+- [x] T049 Refine responsive design for all pages and components using Tailwind CSS in `frontend/`
+- [x] T050 Conduct accessibility review and implement improvements across the application in `frontend/`
+- [x] T051 Implement performance optimization (e.g., lazy loading components/images, code splitting) in `frontend/`
+- [x] T052 Add comprehensive E2E tests with Cypress for critical user journeys (reading content, login/signup, chatbot interaction) in `frontend/cypress/e2e/`
+- [x] T053 Review and update `quickstart.md` and any other relevant documentation in `specs/001-frontend-app/`
 
 ## Dependencies & Execution Order
 

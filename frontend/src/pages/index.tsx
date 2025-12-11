@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Testimonials from '../components/Testimonials'; // Import Testimonials component
 import Heading from '@theme/Heading';
 import BookCard from '../components/BookCard'; // Import BookCard
 import { Book } from '../types/book'; // Import Book type
@@ -79,6 +80,7 @@ export default function Home(): ReactNode {
             ))}
           </div>
         </section>
+        <Testimonials /> {/* Integrate Testimonials component here */}
       </main>
     </Layout>
   );
