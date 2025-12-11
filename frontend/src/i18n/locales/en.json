@@ -1,0 +1,8 @@
+{
+  "welcome": "Welcome to our Physical AI & Humanoid Robotics Textbook App!",
+  "home": "Home",
+  "login": "Login",
+  "signup": "Signup",
+  "footer_copyright": "Copyright © {{year}} My Project, Inc. Built with Docusaurus.",
+  "toggle_dark_mode": "Toggle Dark Mode"
+}

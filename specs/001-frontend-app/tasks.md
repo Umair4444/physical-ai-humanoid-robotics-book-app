@@ -33,12 +33,12 @@ description: "Task list for Frontend Application feature implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T008 Implement basic routing for Home, Login, Signup pages using Docusaurus routing in `frontend/src/pages/`
-- [ ] T009 Develop global Navbar layout component in `frontend/src/layouts/`
-- [ ] T010 Develop global Footer layout component in `frontend/src/layouts/`
-- [ ] T011 Setup light/dark mode context/logic using Zustand in `frontend/src/store/` and `frontend/src/contexts/ThemeContext.tsx`
-- [ ] T012 Setup multi-language (English, Urdu, Chinese) translation infrastructure using an i18n library in `frontend/src/i18n/`
-- [ ] T013 Create an API client for backend communication based on contract definitions in `frontend/src/services/apiClient.ts`
+- [x] T008 Implement basic routing for Home, Login, Signup pages using Docusaurus routing in `frontend/src/pages/`
+- [x] T009 Develop global Navbar layout component in `frontend/src/layouts/`
+- [x] T010 Develop global Footer layout component in `frontend/src/layouts/`
+- [x] T011 Setup light/dark mode context/logic using Zustand in `frontend/src/store/` and `frontend/src/contexts/ThemeContext.tsx`
+- [x] T012 Setup multi-language (English, Urdu, Chinese) translation infrastructure using an i18n library in `frontend/src/i18n/`
+- [x] T013 Create an API client for backend communication based on contract definitions in `frontend/src/services/apiClient.ts`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

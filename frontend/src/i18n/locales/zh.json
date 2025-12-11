@@ -1,0 +1,8 @@
+{
+  "welcome": "欢迎来到我们的物理AI与人形机器人教材应用程序！",
+  "home": "主页",
+  "login": "登录",
+  "signup": "注册",
+  "footer_copyright": "版权所有 © {{year}} 我的项目公司。使用 Docusaurus 构建。",
+  "toggle_dark_mode": "切换暗模式"
+}
