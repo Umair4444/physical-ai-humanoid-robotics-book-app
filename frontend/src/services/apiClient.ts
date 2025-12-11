@@ -1,22 +1,26 @@
-// frontend/src/services/apiClient.ts
+import axios from 'axios';
 
-interface ApiResponse<T> {
-  data: T;
-  status: number;
-  statusText: string;
-}
+const API_BASE_URL = process.env.GATSBY_API_URL || 'http://localhost:8000/api'; // Default to localhost
 
-async function get<T>(path: string): Promise<ApiResponse<T>> {
-  const apiUrl = process.env.GATSBY_API_URL || 'http://localhost:8000/api';
-  const response = await fetch(`${apiUrl}${path}`);
-  if (!response.ok) {
-    throw new Error(`API error: ${response.statusText}`);
+const apiClient = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Optional: Add request interceptor for auth tokens
+apiClient.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('authToken'); // Assuming token is stored in localStorage
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
   }
-  const data: T = await response.json();
-  return { data, status: response.status, statusText: response.statusText };
-}
+);
 
-// Add other methods like post, put, delete as needed
-export const apiClient = {
-  get,
-};
+export default apiClient;

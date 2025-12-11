@@ -1,22 +1,22 @@
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, ReactNode } from 'react';
 import { useThemeStore } from '../store/themeStore';
 
-interface ThemeContextType {
-  isDarkMode: boolean;
-  toggleDarkMode: () => void;
+interface ThemeContextProps {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { isDarkMode, toggleDarkMode } = useThemeStore();
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const { theme, toggleTheme } = useThemeStore();
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
@@ -24,7 +24,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-  if (!context) {
+  if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
