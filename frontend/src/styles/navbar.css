@@ -2,3 +2,11 @@
 
 /* The glass-card effect is primarily handled via Tailwind CSS classes in DynamicNavbar.tsx */
 /* Custom styles can be added here if needed for more complex scenarios not covered by Tailwind. */
+
+.navbar {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
+}

@@ -67,11 +67,11 @@ description: "Task list for Frontend Application feature implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T023 [US5] Develop dynamic Navbar component logic (show on scroll up, hide on scroll down) in `frontend/src/layouts/Navbar.tsx`
-- [ ] T024 [US5] Implement glass-card effect for Navbar using Tailwind CSS in `frontend/src/layouts/Navbar.tsx`
-- [ ] T025 [P] [US5] Develop Scroll-to-Top arrow component in `frontend/src/components/ScrollToTop.tsx`
-- [ ] T026 [US5] Integrate Scroll-to-Top arrow functionality across relevant pages in `frontend/src/layouts/Layout.tsx`
-- [ ] T027 [US5] Design and implement Home page content, including site description and featured books section, in `frontend/src/pages/index.tsx`
+- [x] T023 [US5] Develop dynamic Navbar component logic (show on scroll up, hide on scroll down) in `frontend/src/layouts/Navbar.tsx`
+- [x] T024 [US5] Implement glass-card effect for Navbar using Tailwind CSS in `frontend/src/layouts/Navbar.tsx`
+- [x] T025 [P] [US5] Develop Scroll-to-Top arrow component in `frontend/src/components/ScrollToTop.tsx`
+- [x] T026 [US5] Integrate Scroll-to-Top arrow functionality across relevant pages in `frontend/src/layouts/Layout.tsx`
+- [x] T027 [US5] Design and implement Home page content, including site description and featured books section, in `frontend/src/pages/index.tsx`
 
 ## Phase 5: User Story 2 - Customize Viewing Experience (Priority: P1) 🎯 MVP
 

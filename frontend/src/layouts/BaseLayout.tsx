@@ -1,7 +1,9 @@
 // frontend/src/layouts/BaseLayout.tsx
 
 import React from 'react';
-import LanguageSwitch from '../components/LanguageSwitch'; // Add this import
+import LanguageSwitch from '../components/LanguageSwitch';
+import ScrollToTop from '../components/ScrollToTop'; // Import ScrollToTop
+import ThemeToggle from '../components/ThemeToggle'; // Import ThemeToggle
 
 interface BaseLayoutProps {
   children: React.ReactNode;
@@ -13,9 +15,9 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
       {/* Placeholder for Navbar */}
       <header className="p-4 shadow-md bg-white dark:bg-gray-800 flex justify-between items-center">
         <div className="text-xl font-bold">My App</div>
-        <div className="flex items-center space-x-4"> {/* Add a container for multiple controls */}
+        <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <LanguageSwitch /> {/* Integrate LanguageSwitch here */}
+          <LanguageSwitch />
         </div>
       </header>
 
@@ -27,6 +29,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
       <footer className="p-4 shadow-md bg-white dark:bg-gray-800 text-center text-sm">
         © {new Date().getFullYear()} My App
       </footer>
+      <ScrollToTop /> {/* Render ScrollToTop */}
     </div>
   );
 };

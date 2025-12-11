@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react';
+import DynamicNavbar from '../components/DynamicNavbar';
 
 interface NavbarProps {
   children?: ReactNode;
@@ -6,17 +7,9 @@ interface NavbarProps {
 
 function Navbar({ children }: NavbarProps): JSX.Element {
   return (
-    <nav className="navbar navbar--fixed-top">
-      <div className="navbar__inner">
-        <div className="navbar__items">
-          {/* Left items */}
-        </div>
-        <div className="navbar__items navbar__items--right">
-          {/* Right items */}
-        </div>
-      </div>
+    <DynamicNavbar>
       {children}
-    </nav>
+    </DynamicNavbar>
   );
 }
 
