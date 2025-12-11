@@ -59,6 +59,10 @@
 
 ### Implementation for User Story 1
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4903da8208423af95e2b56e3f4aa55b3d3dcc893
 - [x] T014 [P] [US1] Create `Book` entity model (frontend representation) in `frontend/src/types/book.ts`
 - [x] T015 [P] [US1] Create `Module` entity model in `frontend/src/types/module.ts`
 - [x] T016 [P] [US1] Create `Chapter` entity model in `frontend/src/types/chapter.ts`
@@ -68,6 +72,10 @@
 - [x] T020 [US1] Implement API call to fetch chapter content (`GET /books/{bookId}/modules/{moduleId}/chapters/{chapterId}`) in `frontend/src/services/contentService.ts`
 - [x] T021 [US1] Design and implement Chapter Viewer component (Full Lesson & Summary tabs) in `frontend/src/components/ChapterViewer.tsx`
 - [x] T022 [US1] Integrate image display within content, ensuring responsive handling in `frontend/src/components/ChapterViewer.tsx`
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4903da8208423af95e2b56e3f4aa55b3d3dcc893
 - [ ] T015 [P] [US1] Define React components for `BookCard` in `frontend/src/components/BookCard.tsx`.
 - [ ] T016 [P] [US1] Define React components for `ModuleList` in `frontend/src/components/ModuleList.tsx`.
 - [ ] T017 [P] [US1] Define React components for `ChapterList` in `frontend/src/components/ChapterList.tsx`.
@@ -79,6 +87,10 @@
 - [ ] T023 [US1] Create Docusaurus page for displaying chapter content with tabs (`frontend/src/pages/books/[bookId]/[moduleId]/[chapterId].tsx`).
 - [ ] T024 [US1] Integrate `ContentService` into chapter content page to display "Full Lesson" and "Summary" tabs.
 - [ ] T025 [US1] Ensure images are displayed within chapter content based on `imageUrls` from `Chapter` entity.
+<<<<<<< HEAD
+=======
+>>>>>>> cf4f1cb469c3e797726c36456329b58a8c39e608
+>>>>>>> 4903da8208423af95e2b56e3f4aa55b3d3dcc893
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
